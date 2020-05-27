@@ -35,6 +35,5 @@ function GetAllCommentsFromPostId($postId)
       . "WHERE comment.post_id = $postId "
       . "ORDER BY comment.created_at ASC"
   );
-  $rows = $response->fetchAll();
-  return $rows;
+  return $response->fetchAll();
 }
