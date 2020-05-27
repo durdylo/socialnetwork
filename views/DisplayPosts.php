@@ -71,7 +71,23 @@
         <?php
         if (isset($posts)) {
           foreach ($posts as $onePost) {
+
         ?>
+            <?php
+            if (isset($_SESSION['userId'])) {
+            ?>
+              <div class="input-group">
+                <form class="input-group" method="POST" action="?action=newComment">
+                  <input name="postId" type="hidden" value="<?= $onePost['id'] ?>">
+                  <input name="comment" class="form-control" placeholder="Add a comment" type="text">
+                  <span class="input-group-text">
+                    <a href="#" onclick="$(this).closest('form').submit()"><i class="fa fa-edit"></i></a>
+                  </span>
+                </form>
+              </div>
+            <?php
+            }
+            ?>
             <div class="panel panel-white post panel-shadow">
               <div class="post-heading">
                 <div class="pull-left image">
