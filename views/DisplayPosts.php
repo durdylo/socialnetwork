@@ -56,6 +56,7 @@
 
   <div class="container">
     <div class="row">
+
       <div class="col">
         <h1 class="display-4">KEEP CALM & LOVE FOXES</h1>
         <blockquote class="blockquote text-center">
@@ -114,6 +115,20 @@
             </div>
         <?php
           }
+        }
+        ?>
+        <?php
+        if (isset($_SESSION['userId'])) {
+        ?>
+          <div class="row newMsg">
+            <div class="col">
+              <form class="input-group" method="POST" action="?action=newMsg">
+                <input name="msg" class="form-control" placeholder="Add a message" type="text">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+        <?php
         }
         ?>
       </div>
